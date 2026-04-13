@@ -7,7 +7,7 @@ const CheckoutPage = () => {
   const navigate = useNavigate();
   const [hasOrderBump, setHasOrderBump] = useState(false);
   
-  const basePrice = 119;
+  const basePrice = 99;
   const bumpPrice = 29;
   const totalPrice = basePrice + (hasOrderBump ? bumpPrice : 0);
 
@@ -147,7 +147,7 @@ const CheckoutPage = () => {
                     <p className="text-xs text-gray-500">Digital PDF Download</p>
                   </div>
                 </div>
-                <span className="font-bold">$119</span>
+                <span className="font-bold">$99</span>
               </div>
 
               {hasOrderBump && (

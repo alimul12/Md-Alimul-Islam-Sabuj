@@ -8,6 +8,8 @@ import ThankYouPage from './pages/ThankYouPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import RefundPolicy from './pages/RefundPolicy';
+import About from './pages/About';
+import VendorProfile from './pages/VendorProfile';
 import Footer from './components/Footer';
 
 function ScrollToTop() {
@@ -33,6 +35,8 @@ export default function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<RefundPolicy />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/vendor" element={<VendorProfile />} />
           </Routes>
         </main>
         <Footer />

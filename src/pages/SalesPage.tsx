@@ -29,11 +29,11 @@ const SalesPage = () => {
                   to="/checkout"
                   className="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white text-xl font-black rounded-2xl shadow-2xl shadow-blue-200 hover:bg-blue-700 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
                 >
-                  Get Instant Access - $119 <ArrowRight className="w-6 h-6" />
+                  Get Instant Access - $99 <ArrowRight className="w-6 h-6" />
                 </Link>
                 <div className="text-left">
-                  <p className="text-sm text-gray-400 font-medium line-through">$159.00</p>
-                  <p className="text-lg text-green-600 font-bold">Save $40 Today</p>
+                  <p className="text-sm text-gray-400 font-medium line-through">$129.00</p>
+                  <p className="text-lg text-green-600 font-bold">Save $30 Today</p>
                 </div>
               </div>
               <div className="mt-8 flex items-center gap-4 text-sm text-gray-500">
@@ -162,6 +162,60 @@ const SalesPage = () => {
         </div>
       </section>
 
+      {/* Alex Section - The Methodology */}
+      <section className="py-24 bg-gray-900 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
+            >
+              <span className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-4 block">The Methodology</span>
+              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+                Inspired by the <span className="text-blue-500">$100M Framework</span>
+              </h2>
+              <p className="text-xl text-gray-400 leading-relaxed mb-8">
+                The models inside this eBook aren't just ideas—they are the exact high-leverage frameworks popularized by <strong>Alex Hormozi</strong>. We've distilled the "DNA" of $100M businesses into actionable blueprints you can use today.
+              </p>
+              <div className="space-y-6">
+                {[
+                  "Built on the 'Value Equation' principles",
+                  "Focused on Grand Slam Offers & Lead Gen",
+                  "Designed for maximum leverage and zero waste",
+                  "Actionable systems for $100M+ scale"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="mt-1 bg-blue-500/20 p-1 rounded-full">
+                      <CheckCircle className="w-5 h-5 text-blue-500" />
+                    </div>
+                    <span className="text-gray-300 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2 relative"
+            >
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-800 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img 
+                  src="https://shop.acquisition.com/cdn/shop/files/81rIBlL_TWL_400x400.jpg?v=1696404122" 
+                  alt="Alex Hormozi Methodology" 
+                  className="w-full h-auto object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,7 +223,7 @@ const SalesPage = () => {
             <h2 className="text-3xl md:text-5xl font-black mb-4">What Readers Are Saying</h2>
             <p className="text-gray-600">Real results from real entrepreneurs who implemented these models.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 name: "Sarah Jenkins",
@@ -188,9 +242,27 @@ const SalesPage = () => {
                 role: "E-commerce Entrepreneur",
                 text: "Alimul has a gift for making complex strategies simple. The profit calculator alone is worth 10x the price of the book.",
                 img: "https://picsum.photos/seed/david/100/100"
+              },
+              {
+                name: "Elena Rodriguez",
+                role: "Digital Marketer",
+                text: "The 'Money Machine' concept is brilliant. I've already implemented two of the models for my clients with great success.",
+                img: "https://picsum.photos/seed/elena/100/100"
+              },
+              {
+                name: "James Wilson",
+                role: "Business Consultant",
+                text: "Finally, a book that focuses on systems rather than just 'hacks'. This is essential reading for any serious entrepreneur.",
+                img: "https://picsum.photos/seed/james/100/100"
+              },
+              {
+                name: "Linda Wu",
+                role: "Real Estate Investor",
+                text: "I applied the scaling frameworks to my property management business and saw an immediate increase in efficiency.",
+                img: "https://picsum.photos/seed/linda/100/100"
               }
             ].map((t, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-gray-50 border border-gray-100 relative">
+              <div key={i} className="p-8 rounded-3xl bg-gray-50 border border-gray-100 relative hover:shadow-lg transition-shadow">
                 <div className="flex items-center gap-1 text-yellow-400 mb-4">
                   {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
                 </div>
@@ -218,8 +290,8 @@ const SalesPage = () => {
             </div>
             <h3 className="text-2xl font-bold mb-2">Main eBook + All Bonuses</h3>
             <div className="flex justify-center items-baseline gap-2 mb-8">
-              <span className="text-5xl font-black text-blue-600">$119</span>
-              <span className="text-xl text-gray-400 line-through font-medium">$159</span>
+              <span className="text-5xl font-black text-blue-600">$99</span>
+              <span className="text-xl text-gray-400 line-through font-medium">$129</span>
             </div>
             <div className="space-y-4 mb-10 text-left max-w-md mx-auto">
               {[
@@ -249,15 +321,66 @@ const SalesPage = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-24 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block p-4 bg-green-50 rounded-full mb-6">
-            <ShieldCheck className="w-12 h-12 text-green-600" />
+      <section className="py-24 bg-white border-b border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 border border-gray-100 relative">
+            <div className="lg:w-1/2 space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-4 h-4" /> 100% Risk-Free Guarantee
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+                Your Success is Guaranteed, <span className="text-blue-600">Or Your Money Back.</span>
+              </h2>
+              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  We are so confident in the frameworks inside the <strong>100M Money Models</strong> that we're willing to take all the risk. We're not just selling an eBook; we're providing a roadmap to your business transformation.
+                </p>
+                <p className="italic font-medium text-gray-900">
+                  "If you don't find at least one actionable model that you can apply to your business within 30 days, simply email <span className="text-blue-600">dealswithalimul@gmail.com</span> and we'll issue a full refund immediately. No questions asked, no hoops to jump through."
+                </p>
+                <p>
+                  You either get the results you're looking for, or you get your money back. It's that simple.
+                </p>
+              </div>
+              <div className="flex items-center gap-4 pt-4">
+                <img 
+                  src="https://images.pexels.com/photos/7128984/pexels-photo-7128984.jpeg" 
+                  alt="Alimul Islam Signature" 
+                  className="w-12 h-12 rounded-full border-2 border-white shadow-md"
+                  referrerPolicy="no-referrer"
+                />
+                <div>
+                  <p className="font-bold text-gray-900">Alimul Islam</p>
+                  <p className="text-sm text-gray-500">Founder, 100M Money Models</p>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 relative">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img 
+                  src="https://images.pexels.com/photos/8112199/pexels-photo-8112199.jpeg" 
+                  alt="Trust and Guarantee" 
+                  className="w-full h-[500px] object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 w-full">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                        <Star className="w-6 h-6 text-white fill-current" />
+                      </div>
+                      <div>
+                        <p className="text-white font-bold">30-Day Guarantee</p>
+                        <p className="text-white/80 text-sm">Full Refund • No Questions Asked</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Decorative background element */}
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-100 rounded-full blur-3xl -z-10 opacity-50"></div>
+            </div>
           </div>
-          <h2 className="text-3xl font-bold mb-6">30-Day Money-Back Guarantee</h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            "If you don't find at least one new model you can apply to your business, email <span className="font-bold text-gray-900">dealswithalimul@gmail.com</span> within 30 days for a full refund. No questions asked."
-          </p>
         </div>
       </section>
 
@@ -267,7 +390,7 @@ const SalesPage = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-64 h-64 bg-gray-200 rounded-2xl overflow-hidden flex-shrink-0 border-4 border-white shadow-2xl transform -rotate-3">
               <img 
-                src="input_file_9.png" 
+                src="https://images.pexels.com/photos/7128984/pexels-photo-7128984.jpeg" 
                 alt="Alimul Islam" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
