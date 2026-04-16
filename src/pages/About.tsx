@@ -55,7 +55,10 @@ const About = () => {
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
             Join thousands of others who are using these models to build their dream businesses.
           </p>
-          <a href="/checkout" className="inline-block px-10 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all">
+          <a 
+            href="https://warriorplus.com/o2/buy/r6xd0d/x674hg/gyg2v6" 
+            className="inline-block px-10 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all"
+          >
             Get Started Today
           </a>
         </div>

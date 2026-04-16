@@ -38,7 +38,7 @@ const Footer = () => {
               <li><Link to="/" className="hover:text-blue-500 transition-colors">Sales Page</Link></li>
               <li><Link to="/about" className="hover:text-blue-500 transition-colors">About Us</Link></li>
               <li><Link to="/vendor" className="hover:text-blue-500 transition-colors">Vendor Profile</Link></li>
-              <li><Link to="/checkout" className="hover:text-blue-500 transition-colors">Get Started</Link></li>
+              <li><a href="https://warriorplus.com/o2/buy/r6xd0d/x674hg/gyg2v6" className="hover:text-blue-500 transition-colors">Get Started</a></li>
             </ul>
           </div>
 

@@ -1,10 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, ScrollRestoration } from 'react-router-dom';
 import SalesPage from './pages/SalesPage';
-import CheckoutPage from './pages/CheckoutPage';
-import UpsellPage from './pages/UpsellPage';
-import DownsellPage from './pages/DownsellPage';
-import ThankYouPage from './pages/ThankYouPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import RefundPolicy from './pages/RefundPolicy';
@@ -28,10 +24,6 @@ export default function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<SalesPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/upsell" element={<UpsellPage />} />
-            <Route path="/downsell" element={<DownsellPage />} />
-            <Route path="/thank-you" element={<ThankYouPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<RefundPolicy />} />

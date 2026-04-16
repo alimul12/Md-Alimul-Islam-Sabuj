@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle, ArrowRight, Star, ShieldCheck, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SalesPage = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://warriorplus.com/o2/disclaimer/r6xd0d";
+    script.type = "text/javascript";
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const warriorPlusBuyLink = "https://warriorplus.com/o2/buy/r6xd0d/x674hg/gyg2v6";
+  const warriorPlusButtonImg = "https://warriorplus.com/o2/btn/cn150011001/r6xd0d/x674hg/462213";
+  const warriorPlusTrackingImg = "https://warriorplus.com/o2/btn/pn150011001/r6xd0d/x674hg/462213";
+
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
       {/* Hero Section */}
@@ -24,16 +40,24 @@ const SalesPage = () => {
               <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
                 Stop guessing. Start scaling. Get the exact systems and frameworks used by elite entrepreneurs to build multi-million dollar revenue engines.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4">
-                <Link
-                  to="/checkout"
-                  className="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white text-xl font-black rounded-2xl shadow-2xl shadow-blue-200 hover:bg-blue-700 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+              <div className="flex flex-col sm:flex-row items-center gap-8">
+                <motion.a
+                  href={warriorPlusBuyLink}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block relative group"
                 >
-                  Get Instant Access - $99 <ArrowRight className="w-6 h-6" />
-                </Link>
-                <div className="text-left">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <img 
+                    src={warriorPlusButtonImg} 
+                    alt="Get Instant Access" 
+                    className="relative h-24 w-auto drop-shadow-2xl" 
+                    referrerPolicy="no-referrer" 
+                  />
+                </motion.a>
+                <div className="text-left bg-white/50 backdrop-blur-sm px-6 py-3 rounded-2xl border border-blue-100">
                   <p className="text-sm text-gray-400 font-medium line-through">$129.00</p>
-                  <p className="text-lg text-green-600 font-bold">Save $30 Today</p>
+                  <p className="text-xl text-green-600 font-black">Save $30 Today</p>
                 </div>
               </div>
               <div className="mt-8 flex items-center gap-4 text-sm text-gray-500">
@@ -150,14 +174,24 @@ const SalesPage = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 p-8 bg-blue-600 rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="mt-12 p-8 bg-blue-600 rounded-3xl text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-blue-200">
             <div>
               <h3 className="text-2xl font-bold mb-2">Exclusive Bonus Included!</h3>
               <p className="text-blue-100">Get the "Model Selection Checklist" + "Profit Calculator Template" for FREE.</p>
             </div>
-            <Link to="/checkout" className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-colors">
-              Claim Your Bonuses
-            </Link>
+            <motion.a 
+              href={warriorPlusBuyLink} 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block"
+            >
+              <img 
+                src={warriorPlusButtonImg} 
+                alt="Claim Your Bonuses" 
+                className="h-20 w-auto drop-shadow-xl" 
+                referrerPolicy="no-referrer" 
+              />
+            </motion.a>
           </div>
         </div>
       </section>
@@ -307,12 +341,20 @@ const SalesPage = () => {
                 </div>
               ))}
             </div>
-            <Link
-              to="/checkout"
-              className="block w-full py-5 bg-blue-600 text-white text-xl font-bold rounded-2xl hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all"
+            <motion.a
+              href={warriorPlusBuyLink}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block relative group"
             >
-              Get Instant Access Now
-            </Link>
+              <div className="absolute -inset-4 bg-blue-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+              <img 
+                src={warriorPlusButtonImg} 
+                alt="Get Instant Access Now" 
+                className="relative h-32 w-auto mx-auto drop-shadow-2xl" 
+                referrerPolicy="no-referrer" 
+              />
+            </motion.a>
             <p className="mt-6 text-gray-500 text-sm flex items-center justify-center gap-2">
               <ShieldCheck className="w-4 h-4" /> Secure SSL Encrypted Checkout
             </p>
@@ -450,6 +492,14 @@ const SalesPage = () => {
           </div>
         </div>
       </section>
+
+      {/* WarriorPlus Tracking & Disclaimer */}
+      <div className="py-12 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <img src={warriorPlusTrackingImg} height="1" width="1" style={{ visibility: 'hidden' }} alt="" />
+          <div className="wplus_spdisclaimer"></div>
+        </div>
+      </div>
     </div>
   );
 };
